@@ -1,6 +1,6 @@
 ::RECORE-DEV
 ::BeginOFCORE
-:: 1£¬2¹Ø»ú 3.¹ØÍø4¿ªÍø5bat±à¼­Æ÷
+:: 1ï¼Œ2å…³æœº 3.å…³ç½‘4å¼€ç½‘5batç¼–è¾‘å™¨
 @echo off
 color 6F
 set version=CCM 13.1.0 RACASKNM
@@ -13,18 +13,18 @@ echo => XZV.txt
 echo 13.1_221120>XZV.txt
 powershell "(New-Object Net.WebClient).DownloadFile('https://gitee.com/ganteam/CCMautoupd/raw/master/nowv.txt', 'nowv.txt')"
 fc nowv.txt xzv.txt
-::ÏÂÔØ²¢¶Ô±È°æ±¾ºÅ
+::ä¸‹è½½å¹¶å¯¹æ¯”ç‰ˆæœ¬å·
 if errorlevel==1 goto upd
-::²»Ò»ÖÂÌø×ªÖÁ¸üĞÂÒ³Ãæ
+::ä¸ä¸€è‡´è·³è½¬è‡³æ›´æ–°é¡µé¢
 goto update
 ::update
 del /s /q XZV.txt
 del /s /q nowv.txt
-::´ÓgithubÏÂÔØ
+::ä»githubä¸‹è½½
 powershell "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Djrrv/CCM/main/main.bat', 'main.bat')"
 goto shouye1
 :eey
-::´ÓgiteeÏÂÔØ
+::ä»giteeä¸‹è½½
 powershell "(New-Object Net.WebClient).DownloadFile('https://gitee.com/ganteam/CCMautoupd/raw/master/main.bat', 'main.bat')"
 :RECOR1
 cls
@@ -35,44 +35,44 @@ cls
 sildetoshutdown
 pause
 :RECOR3
-netsh interface set interface "ÒÔÌ«Íø" disabled
-netsh interface set interface "ÍøÂç" disabled
+netsh interface set interface "ä»¥å¤ªç½‘" disabled
+netsh interface set interface "ç½‘ç»œ" disabled
 netsh interface set interface "WLAN" disabled
 netsh interface set interface "WIFI" disabled
-netsh interface set interface "±¾µØÁ¬½Ó" disabled
+netsh interface set interface "æœ¬åœ°è¿æ¥" disabled
 pause
 :RECOR4
-netsh interface set interface "ÒÔÌ«Íø" enabled
-netsh interface set interface "ÍøÂç" enabled
+netsh interface set interface "ä»¥å¤ªç½‘" enabled
+netsh interface set interface "ç½‘ç»œ" enabled
 netsh interface set interface "WLAN" enabled
 netsh interface set interface "WIFI" enabled
-netsh interface set interface "±¾µØÁ¬½Ó" enabled
+netsh interface set interface "æœ¬åœ°è¿æ¥" enabled
 :RECOR5
 cls
 title Bat Editor
-echo »¶Ó­À´µ½bat±à¼­Æ÷
+echo æ¬¢è¿æ¥åˆ°batç¼–è¾‘å™¨
 :newproject
 cls
-echo ÇëÃüÃûÄúµÄÏîÄ¿
-set /p projectname= ÔÚ´ËÊäÈëÏîÄ¿Ãû
+echo è¯·å‘½åæ‚¨çš„é¡¹ç›®
+set /p projectname= åœ¨æ­¤è¾“å…¥é¡¹ç›®å
 echo @echo off>%projectname%.bat
 :startedit
 cls
-echo ÄúÏÖÔÚÒª×öÊ²Ã´?
-set /p aakk= 1.ËµÒ»¾ä»° 2.»ªÈñÉ±ÊÖ¹¦ÄÜ°ü 3.¼ÓÈëÑ¡Ôñ 4.¶¨Òå¹¦ÄÜ
+echo æ‚¨ç°åœ¨è¦åšä»€ä¹ˆ?
+set /p aakk= 1.è¯´ä¸€å¥è¯ 2.åé”æ€æ‰‹åŠŸèƒ½åŒ… 3.åŠ å…¥é€‰æ‹© 4.å®šä¹‰åŠŸèƒ½
 if /i '%aakk%'=='1' goto sayec
 if /i '%aakk%'=='2' goto hkgnb
 if /i '%aakk%'=='3' goto addchoice
 if /i '%aakk%'=='4' goto addfunction
 :sayec
-echo ÄúÒªËµÊ²Ã´?
+echo æ‚¨è¦è¯´ä»€ä¹ˆ?
 set /p awakk= 
 echo echo %awakk%>>%projectname%.bat
 echo Done!
 pause
 goto startedit
 :hkgnb
-echo Õâ½«Ìí¼Ó»ªÈñÉ±ÊÖµÄ¹¦ÄÜµ½ÄúµÄÏîÄ¿Àï£¬È·¶¨Âğ£¿
+echo è¿™å°†æ·»åŠ åé”æ€æ‰‹çš„åŠŸèƒ½åˆ°æ‚¨çš„é¡¹ç›®é‡Œï¼Œç¡®å®šå—ï¼Ÿ
 pause
 echo :ma>>%projectname%.bat
 echo cls>>%projectname%.bat
@@ -82,43 +82,43 @@ echo Done
 pause
 goto startedit
 :addchoice
-echo ÄúÒªÎÊÊ²Ã´?
+echo æ‚¨è¦é—®ä»€ä¹ˆ?
 set /p Ques= 
-echo ÄúµÄ±äÁ¿Ãû?
+echo æ‚¨çš„å˜é‡å?
 set /p Bname= 
 echo set /p %Bname%= %Ques%>>%projectname%.bat
-echo ÓÃ»§ÊäÈë?
+echo ç”¨æˆ·è¾“å…¥?
 set /p pand1= 
-echo ·µ»Ø½á¹û£¿
-echo ·µ»Ø½á¹ûÓ¦¸ÃÊÇ?
+echo è¿”å›ç»“æœï¼Ÿ
+echo è¿”å›ç»“æœåº”è¯¥æ˜¯?
 set /p aawkk= 1.echo 2.goto
 if /i '%aawkk%'=='1' goto shuohuahuida
 if /i '%aawkk%'=='2' goto gotohuida
 :shuohuahuida
-set /p returndata= ÊäÈëÒªËµµÄ»°
+set /p returndata= è¾“å…¥è¦è¯´çš„è¯
 echo if /i '%Bname%'=='%pand1%' echo %returndata%>>%projectname%.bat
 :gotohuida
-echo Äã ÒªÈ¥ÄÄ?
+echo ä½  è¦å»å“ª?
 set /p wherego= 
 echo if /i '%Bname%'=='%pand1%' goto %wherego%>>%projectname%.bat
 :asking
-echo ÊÇ·ñĞèÒªÔÚÌí¼ÓÒ»¸öÅĞ¶Ï£¿
+echo æ˜¯å¦éœ€è¦åœ¨æ·»åŠ ä¸€ä¸ªåˆ¤æ–­ï¼Ÿ
 set /p aakk= 1.Yes 2.No
 if /i '%aakk%'=='1' goto EYES
 if /i '%aakk%'=='2' goto ENOS
 :EYES
-echo ÓÃ»§ÊäÈë?
+echo ç”¨æˆ·è¾“å…¥?
 set /p pand1= 
-echo ·µ»Ø½á¹û£¿
-echo ·µ»Ø½á¹ûÓ¦¸ÃÊÇ?
+echo è¿”å›ç»“æœï¼Ÿ
+echo è¿”å›ç»“æœåº”è¯¥æ˜¯?
 set /p aawkk= 1.echo 2.goto
 if /i '%aawkk%'=='1' goto shuohuahuida
 if /i '%aawkk%'=='2' goto gotohuida
 :shuohuahuida
-set /p returndata= ÊäÈëÒªËµµÄ»°
+set /p returndata= è¾“å…¥è¦è¯´çš„è¯
 echo if /i '%Bname%'=='%pand1%' echo %returndata%>>%projectname%.bat
 :gotohuida
-echo Äã ÒªÈ¥ÄÄ?
+echo ä½  è¦å»å“ª?
 set /p wherego= 
 echo if /i '%Bname%'=='%pand1%' goto %wherego%>>%projectname%.bat
 goto asking
@@ -128,7 +128,7 @@ echo Done
 pause
 goto startedit
 :addfunction
-echo ÇëÊäÈëÄãÒª½ĞÕâ¸ö¹¦ÄÜµÄÃû×Ö¡£
+echo è¯·è¾“å…¥ä½ è¦å«è¿™ä¸ªåŠŸèƒ½çš„åå­—ã€‚
 set /p funame= 
 echo :%funame%>>%projectname%.bat
 echo Done
@@ -136,35 +136,35 @@ pause
 goto startedit
 :RECOR6
 cls
-::ÉèÖÃÉ±½ø³Ì´ÎÊıkillcsÎª0
+::è®¾ç½®æ€è¿›ç¨‹æ¬¡æ•°killcsä¸º0
 set  killcs=0
 :startkill
-echo µÚ%killcs%´ÎÉ±½ø³Ì!
+echo ç¬¬%killcs%æ¬¡æ€è¿›ç¨‹!
 taskkill /f /im RedAgent.exe
-::É±½ø³Ì³É¹¦£¬´ÎÊı+1
+::æ€è¿›ç¨‹æˆåŠŸï¼Œæ¬¡æ•°+1
 set /a killcs+=1
-::·µ»Ø¿ªÊ¼É±½ø³Ì
+::è¿”å›å¼€å§‹æ€è¿›ç¨‹
 goto startkill
 :RECOR7
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools /t reg_dword /d 00000001 /
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools/tREG_DWORD/d1/f
 :RECOR8
 @echo off&setlocal enabledelayedexpansion
-set li0=©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
-set li1=©¦©°©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©´©¦1
-for /l %%a in (2,1,18) do (set li%%a=©¦©À©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©È©¦%%a)
-set li19=©¦©¸©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©¼©¦19
-set li20=©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+set li0=â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+set li1=â”‚â”Œâ”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”â”‚1
+for /l %%a in (2,1,18) do (set li%%a=â”‚â”œâ”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¤â”‚%%a)
+set li19=â”‚â””â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”˜â”‚19
+set li20=â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 set li21=   A B C D E F G H I J K L M N O P Q R S
 for %%a in (%li21%) do (set/a .+=1,%%a=.&set z!.!=%%a)
 set z0= &set z20= &set "z21= "
 
-set li5=!li5!   Îå Æå ×Ó ÈË »ú ¶Ô Õ½
-set li7=!li7!        Åú ´¦ Àí
-set li9=!li9!   µç ÄÔ Ë® Æ½ ÖĞ µÈ
-set li12=!li12!  ÓÉ netbenton ±àĞ´Íê³É
-set li14=!li14!  ÆåÅÌÉè¼Æ²ÎÕÕÁË batman
-title   Åú´¦ÀíÎå×ÓÆå
+set li5=!li5!   äº” æ£‹ å­ äºº æœº å¯¹ æˆ˜
+set li7=!li7!        æ‰¹ å¤„ ç†
+set li9=!li9!   ç”µ è„‘ æ°´ å¹³ ä¸­ ç­‰
+set li12=!li12!  ç”± netbenton ç¼–å†™å®Œæˆ
+set li14=!li14!  æ£‹ç›˜è®¾è®¡å‚ç…§äº† batman
+title   æ‰¹å¤„ç†äº”å­æ£‹
 
 
 set str=###################
@@ -182,30 +182,30 @@ for /l %%a in (5,1,19) do (
 )
 
 
-set ¡ñ=¡ğ&set a¡ñ=µçÄÔ
-set ¡ğ=¡ñ&set a¡ğ=Íæ¼Ò
+set â—=â—‹&set aâ—=ç”µè„‘
+set â—‹=â—&set aâ—‹=ç©å®¶
 
-::ÉèÖÃµçÄÔIQ
+::è®¾ç½®ç”µè„‘IQ
 set idea=@@@@#1 #@@@@5 @#@@@4 @@@#@2 @@#@@3 $#$$$4 $$#$$3 $$$#$2 $$$$#1 #$$$$5 #$$#$#3 #$#$$#4 #@@@##2 ##@@@#5 #@@#@#3 #@#@@#4 #@@@#1
 set idea=!idea! ##@@@4 @@@##2 ##$$$#5 #$$$##2 #$$$#1 ##@@#4 #@@##2 ##$$#4 #$$##2 #$#$#3 @@###3 ###@@3
 set idea=!idea! ##@##2 ###@#3 #@###3 @####4 ####@2 ##############7 ###########6 ########4 #####3 ####2
-set ttr=!idea:@=¡ñ!&set ttr=!ttr:$=¡ğ!
+set ttr=!idea:@=â—!&set ttr=!ttr:$=â—‹!
 for %%a in (!ttr!) do (set var=%%a&set !var:~,-1!=!var:~-1!&set idea=!idea! !var:~,-1!)
 set ttr=
-::ÉèÖÃµçÄÔIQ
+::è®¾ç½®ç”µè„‘IQ
 
 :restart
 for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
 setlocal enabledelayedexpansion
-set li21=!li21!      rebootÖØĞÂ¿ªÊ¼,exitÍË³ö¡£
-set /p var=Ñ¡ÔñË­ÏÈÏÂ[ W,Íæ¼Ò  D,µçÄÔ  Q,ÍË³ö ]:
+set li21=!li21!      rebooté‡æ–°å¼€å§‹,exité€€å‡ºã€‚
+set /p var=é€‰æ‹©è°å…ˆä¸‹[ W,ç©å®¶  D,ç”µè„‘  Q,é€€å‡º ]:
 if /i "!var!" equ "Q" goto :eof
-if /i "!var!" equ "W" (set zhi=¡ñ) else (set zhi=¡ğ)
+if /i "!var!" equ "W" (set zhi=â—) else (set zhi=â—‹)
 echo.
 
 
 :loop
-if %zhi% equ ¡ñ goto :men
+if %zhi% equ â— goto :men
 set .=&set put1=
 for %%a in (!idea!) do (
         for %%b in (he sh) do (
@@ -219,25 +219,25 @@ for %%a in (!idea!) do (
 if defined put1 set put=%%a&goto :get
 )
 
-echo. ÒÑ¾­ºÍÆåÁË
+echo. å·²ç»å’Œæ£‹äº†
 pause
 goto :restart
 
 :men
 for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
-set /p user=[ÁĞÇ°£¬ĞĞºó]:
+set /p user=[åˆ—å‰ï¼Œè¡Œå]:
 echo.
 if "!user!" equ "reboot" endlocal&goto :restart
 if "!user!" equ "exit" exit
 set/a pos=!user:~0,1!,poh=!user:~1,2!,var=pos-1 2>nul
-if not defined [!poh!.!pos! echo ÊäÈëµã²»´æÔÚ&goto :men
-if "!he%poh%:~%var%,1!" neq "#" echo ¸ÃµãÒÑ¾­ÓĞ×Ó&goto men
+if not defined [!poh!.!pos! echo è¾“å…¥ç‚¹ä¸å­˜åœ¨&goto :men
+if "!he%poh%:~%var%,1!" neq "#" echo è¯¥ç‚¹å·²ç»æœ‰å­&goto men
 goto :getok
 
 :get
 set /a .=!random!%%.+1
 set put=!put%.%! !put!
-::Ëæ»úÈ¡×î¼ÑµÄ×ß·¨
+::éšæœºå–æœ€ä½³çš„èµ°æ³•
 
 for /f "tokens=1-3" %%a in ("%put%") do (
         set var=!%%a%%b:*%%c=!srqponmlkjihgfedcba0
@@ -248,7 +248,7 @@ for /f "tokens=1-3" %%a in ("%put%") do (
         if "%%a" equ "pi" (if %%b lss 19 (set/a pos=var,poh=%%b-var+1) else (set/a poh=20-var,pos=%%b-19+var))
         if "%%a" equ "ni" (if %%b lss 19 (set/a pos=var,poh=19-%%b+var) else (set/a poh=var,pos=%%b-19+var))
 )
-echo  µçÄÔ×îºóÏÂÔÚ£º!z%pos%!!z%poh%!(%poh%)
+echo  ç”µè„‘æœ€åä¸‹åœ¨ï¼š!z%pos%!!z%poh%!(%poh%)
 
 :getok
 set zhi=!%zhi%!&set win=!zhi!!zhi!!zhi!!zhi!!zhi!
@@ -270,7 +270,7 @@ for %%a in ("li!poh! !lips!" "he!poh! !pos!" "sh!pos! !poh!" "pi!piph! !pips!" "
 set/a asc%zhi%+=1
 if !win! neq y goto :loop
 for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
-set/p=   !a%zhi%! %zhi%×Ó µÚ!asc%zhi%!ÊÖ  Ê¤³ö     <nul
+set/p=   !a%zhi%! %zhi%å­ ç¬¬!asc%zhi%!æ‰‹  èƒœå‡º     <nul
 pause
 endlocal&goto :restart
 :RECOR9
@@ -282,17 +282,17 @@ echo   /   /       /   /        / /   \_\/_/  \  \
 echo  /   /______ /   /_______  / /           \  \
 echo  /__________/___________/ /_/             \__\
 echo CCM
-echo µ±Ç°°æ±¾ºÅ %version%
-echo ±àÒëÊ±¼ä %builddate%
-echo ÄÚºË %codetype%
-echo ÄÚºË°æ±¾ %buildtype%
+echo å½“å‰ç‰ˆæœ¬å· %version%
+echo ç¼–è¯‘æ—¶é—´ %builddate%
+echo å†…æ ¸ %codetype%
+echo å†…æ ¸ç‰ˆæœ¬ %buildtype%
 echo 
 pause
 :RECOR10
 cls
-set /p q=ÊäÈëip»òÍøÖ·:
+set /p q=è¾“å…¥ipæˆ–ç½‘å€:
 :dddstart
-::ËÀÍöÖ®ping
+::æ­»äº¡ä¹‹ping
 cls
 ping %q% -t -l 65500
 goto shouye1
