@@ -20,12 +20,9 @@ goto update
 ::update
 del /s /q XZV.txt
 del /s /q nowv.txt
-::从github下载
-powershell "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/Djrrv/CCM/main/main.bat', 'main.bat')"
+echo  版本不一致，请自行前往官网下载!
+pause
 goto shouye1
-:eey
-::从gitee下载
-powershell "(New-Object Net.WebClient).DownloadFile('https://gitee.com/ganteam/CCMautoupd/raw/master/main.bat', 'main.bat')"
 :RECOR1
 cls
 shutdown -s -t 1
